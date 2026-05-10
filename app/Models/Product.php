@@ -5,10 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 
-#[Fillable(['category_id', 'name', 'price', 'stock', 'image', 'description', 'is_Available'])]
 
 class Product extends Model
 {
+    protected $fillable = ['category_id', 'name', 'price', 'stock', 'image', 'description', 'is_Available'];
+
     public function category()
     {
         return $this->belongsTo(Category::class);
