@@ -17,9 +17,13 @@
                 </div>
 
                 <div class="flex items-center">
-                    @if (Auth::check())
+                    @if (Auth::check() && Auth::user()->role === 'admin')
                         <a href="{{ route('admin.dashboard') }}" class="bg-emerald-600 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-emerald-700 transition shadow-lg shadow-emerald-200">
                             Dashboard
+                        </a>
+                    @elseif (Auth::check())
+                        <a href="{{ route('profile.edit') }}" class="bg-emerald-600 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-emerald-700 transition shadow-lg shadow-emerald-200">
+                            Profile
                         </a>
                     @else
                         <a href="{{ route('login') }}" class="bg-emerald-600 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-emerald-700 transition shadow-lg shadow-emerald-200">
