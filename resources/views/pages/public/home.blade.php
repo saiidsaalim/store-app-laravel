@@ -1,111 +1,237 @@
 @extends('layouts.public')
 
-@section('content')
 @section('title', 'Beranda | ')
-    
+@section('meta_description', 'Temukan laptop, keyboard, mouse, dan periferal pilihan untuk kerja dan gaming di KATalog.')
 
+@section('content')
+<div class="landing-page">
+    <section class="hero-section" aria-labelledby="hero-title">
+        <img
+            class="hero-backdrop"
+            src="{{ asset('images/landing/hero-keyboard.webp') }}"
+            alt=""
+            aria-hidden="true"
+            fetchpriority="high"
+        >
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="hero-glow hero-glow-one" aria-hidden="true"></div>
+        <div class="hero-glow hero-glow-two" aria-hidden="true"></div>
 
-<section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=2000" class="w-full h-full object-cover" alt="Background">
-            <div class="absolute inset-0 bg-emerald-900/40 backdrop-blur-[2px]"></div>
-        </div>
+        <div class="site-container hero-content">
+            <div class="hero-copy">
+                <span class="hero-badge">
+                    <span class="hero-badge-dot" aria-hidden="true"></span>
+                    Gadget &amp; Periferal Terbaru
+                </span>
+                <h1 id="hero-title">
+                    Tingkatkan<br>
+                    <span>Produktivitas</span><br>
+                    Tanpa Batas
+                </h1>
+                <p class="hero-description">
+                    Kami menyediakan periferal premium mulai dari keyboard mekanik hingga mouse gaming presisi tinggi untuk menunjang performa kerja dan hobi Anda.
+                </p>
+                <div class="hero-actions">
+                    <a class="button button-light" href="{{ route('products') }}">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M5 8h14l1 13H4L5 8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                            <path d="M9 9V6a3 3 0 0 1 6 0v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                        </svg>
+                        Jelajahi Produk
+                    </a>
+                    <a class="button button-outline" href="{{ route('register') }}">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M15 20v-1.5a4.5 4.5 0 0 0-4.5-4.5h-3A4.5 4.5 0 0 0 3 18.5V20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                            <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="1.8"/>
+                            <path d="M19 8v6m-3-3h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                        </svg>
+                        Daftar Akun
+                    </a>
+                </div>
+            </div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="text-white">
-                    <span class="inline-block px-4 py-1.5 bg-emerald-500/30 border border-emerald-400/50 rounded-full text-sm font-medium mb-6">Gadget & Periferal Terbaru</span>
-                    <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6">Tingkatkan <span class="text-emerald-400">Produktivitas</span> Tanpa Batas</h1>
-                    <p class="text-lg text-emerald-50/90 mb-8 max-w-lg">Kami menyediakan periferal premium mulai dari keyboard mekanik hingga mouse gaming presisi tinggi untuk menunjang performa kerja dan hobi Anda.</p>
-                    <div class="flex gap-4">
-                        <a href="{{ route('products') }}" class="bg-white text-emerald-700 px-8 py-3 rounded-xl font-bold hover:bg-emerald-50 transition shadow-xl">Jelajahi Produk</a>
-                        <a href="{{ route('register') }}" class="bg-transparent border-2 border-white/50 text-white px-8 py-3 rounded-xl font-bold hover:bg-white/10 transition">Daftar Akun</a>
+            <div class="hero-visual">
+                <div class="hero-image-frame">
+                    <img
+                        src="{{ asset('images/landing/hero-laptop.webp') }}"
+                        alt="Laptop dengan pencahayaan ambient biru dan merah"
+                        width="1300"
+                        height="900"
+                        fetchpriority="high"
+                    >
+                    <div class="hero-image-shade" aria-hidden="true"></div>
+                    <span class="hero-image-label">Temukan setup terbaikmu</span>
+                </div>
+
+                <div class="hero-feature-list" aria-label="Keunggulan produk KATalog">
+                    <div class="hero-feature-card">
+                        <span class="feature-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="m13 2-3 8h7l-6 12 1-9H6l7-11Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                        <span><strong>Performa Tinggi</strong><small>Responsif &amp; andal</small></span>
+                    </div>
+                    <div class="hero-feature-card">
+                        <span class="feature-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9L12 3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                        <span><strong>Kualitas Premium</strong><small>Dibuat untuk tahan lama</small></span>
+                    </div>
+                    <div class="hero-feature-card">
+                        <span class="feature-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M4 5h16v11H4zM2 20h20M9 16v4m6-4v4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                        <span><strong>Kerja &amp; Gaming</strong><small>Nyaman sepanjang hari</small></span>
                     </div>
                 </div>
 
-                <div class="relative hidden md:block">
-                    <div class="relative w-full h-96">
-                        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&q=80&w=900" class="hero-image absolute w-full rounded-3xl shadow-2xl border-4 border-white/20 transition-opacity duration-1000 opacity-100" alt="Dark gaming mouse">
-                        <img src="https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&q=80&w=900" class="hero-image absolute w-full rounded-3xl shadow-2xl border-4 border-white/20 transition-opacity duration-1000 opacity-0" alt="Pro gaming mouse">
-                        <img src="https://images.unsplash.com/photo-1595044426077-d36d9236d54a?auto=format&fit=crop&q=80&w=900" class="hero-image absolute w-full rounded-3xl shadow-2xl border-4 border-white/20 transition-opacity duration-1000 opacity-0" alt="Mechanical keyboard">
-                        <img src="https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?auto=format&fit=crop&q=80&w=900" class="hero-image absolute w-full rounded-3xl shadow-2xl border-4 border-white/20 transition-opacity duration-1000 opacity-0" alt="Smartwatch">
-                    </div>
+                <div class="hero-indicators" aria-hidden="true">
+                    <span class="is-active"></span><span></span><span></span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="layanan" class="py-24 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Mengapa Memilih Kami?</h2>
-                <div class="w-20 h-1.5 bg-emerald-500 mx-auto rounded-full"></div>
+    <div class="site-container benefits-wrap">
+        <section class="benefits-panel" aria-label="Layanan KATalog">
+            <div class="benefit-item">
+                <span class="benefit-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7zM7 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm11 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span><strong>Pengiriman Cepat</strong><small>Ke seluruh Indonesia</small></span>
             </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition group">
-                    <div class="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center text-emerald-600 mb-6 group-hover:bg-emerald-600 group-hover:text-white transition">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Produk Original</h3>
-                    <p class="text-gray-500">Jaminan barang asli 100% dari distributor resmi dengan garansi panjang.</p>
-                </div>
-
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition group">
-                    <div class="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center text-emerald-600 mb-6 group-hover:bg-emerald-600 group-hover:text-white transition">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Harga Terbaik</h3>
-                    <p class="text-gray-500">Kami menawarkan harga kompetitif yang sesuai dengan kantong Anda tanpa mengurangi kualitas.</p>
-                </div>
-
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition group">
-                    <div class="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center text-emerald-600 mb-6 group-hover:bg-emerald-600 group-hover:text-white transition">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Terjual 1000+</h3>
-                    <p class="text-gray-500">Telah dipercaya oleh ribuan pengguna di seluruh Indonesia untuk kebutuhan periferal harian.</p>
-                </div>
+            <div class="benefit-item">
+                <span class="benefit-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M12 3 5 6v5c0 4.6 2.9 8.3 7 10 4.1-1.7 7-5.4 7-10V6l-7-3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span><strong>Produk Bergaransi</strong><small>Aman &amp; terpercaya</small></span>
             </div>
-        </div>
-    </section>
+            <div class="benefit-item">
+                <span class="benefit-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M3 10h18m-14 5h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+                </span>
+                <span><strong>Pembayaran Aman</strong><small>Berbagai metode pembayaran</small></span>
+            </div>
+            <div class="benefit-item">
+                <span class="benefit-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M4 13v-2a8 8 0 0 1 16 0v2M4 13h3v6H6a2 2 0 0 1-2-2v-4Zm16 0h-3v6h1a2 2 0 0 0 2-2v-4ZM17 19a5 5 0 0 1-5 3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span><strong>Dukungan Pelanggan</strong><small>Siap membantu Anda</small></span>
+            </div>
+        </section>
+    </div>
 
-    <section id="produkpreview" class="py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+    <section class="category-section" id="kategori" aria-labelledby="category-title">
+        <div class="site-container">
+            <div class="section-heading">
                 <div>
-                    <h2 class="text-3xl font-bold text-gray-900 mb-2">Produk Terpopuler</h2>
-                    <p class="text-gray-500">Pilihan terbaik untuk menunjang performa Anda.</p>
+                    <span class="eyebrow">Jelajahi koleksi</span>
+                    <h2 id="category-title">Kategori Produk</h2>
+                    <p>Temukan berbagai kebutuhan gadget dan periferal terbaik sesuai kebutuhan Anda.</p>
                 </div>
+                <a class="text-link" href="{{ route('products') }}">
+                    Lihat Semua
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                @forelse ($products as $item)
-                    <div class="group">
-                    <div class="relative overflow-hidden rounded-2xl mb-4">
-                        <img src="{{ Storage::url('products/' . $item->image) }}" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500" alt="Product">
-                        <div class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">{{ $item->category->name ?? 'Kategori' }}</div>
-                    </div>
-                    <h4 class="text-lg font-bold text-gray-800">{{ $item->name }}</h4>
-                    <p class="text-emerald-600 font-bold mt-1">Rp {{ number_format($item->price, 0, ',', '.') }}</p>
-                    <a href="https://api.whatsapp.com/send?phone=6285845708649&text=Halo,%20saya%20ingin%20memesan%20{{ $item->name }}" class="mt-2 bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition duration-300" target="_blank">Beli Sekarang</a>
-                </div>
-                @empty
-                    <div class="group">
-                        <p class="text-gray-500 text-center">Tidak ada produk yang tersedia.</p>
-                    </div>
-                @endforelse
-                
-
-            </div>
-
-            <div class="text-center mt-16">
-                <a href="{{ route('products') }}" class="inline-flex items-center gap-2 text-emerald-600 font-bold hover:gap-4 transition-all">
-                    Lihat Produk Lainnya
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            <div class="category-grid">
+                <a class="category-card category-laptop" href="{{ route('products') }}">
+                    <span class="category-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="12" rx="1.5" stroke="currentColor" stroke-width="1.7"/><path d="M2 20h20l-2-4H4l-2 4Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+                    </span>
+                    <span class="category-copy"><strong>Laptop</strong><small>Andalan untuk kerja dan hiburan.</small></span>
+                    <img src="{{ asset('images/landing/category-laptop.webp') }}" alt="Laptop untuk produktivitas" width="700" height="500" loading="lazy" decoding="async">
+                    <span class="category-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </a>
+                <a class="category-card category-keyboard" href="{{ route('products') }}">
+                    <span class="category-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none"><rect x="2.5" y="6" width="19" height="12" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M6 10h.01M9 10h.01M12 10h.01M15 10h.01M18 10h.01M6 13h.01M9 13h.01M12 13h.01M15 13h.01M18 13h.01M9 16h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    </span>
+                    <span class="category-copy"><strong>Keyboard</strong><small>Mengetik nyaman dengan karakter.</small></span>
+                    <img src="{{ asset('images/landing/category-keyboard.webp') }}" alt="Keyboard mekanik" width="700" height="500" loading="lazy" decoding="async">
+                    <span class="category-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </a>
+                <a class="category-card category-mouse" href="{{ route('products') }}">
+                    <span class="category-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none"><rect x="6" y="2.5" width="12" height="19" rx="6" stroke="currentColor" stroke-width="1.7"/><path d="M12 3v6m-6 0h12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+                    </span>
+                    <span class="category-copy"><strong>Mouse</strong><small>Kontrol presisi untuk tiap aktivitas.</small></span>
+                    <img src="{{ asset('images/landing/category-mouse.webp') }}" alt="Mouse komputer ergonomis" width="700" height="500" loading="lazy" decoding="async">
+                    <span class="category-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </a>
+                <a class="category-card category-other" href="{{ route('products') }}">
+                    <span class="category-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none"><path d="m12 3 9 5-9 5-9-5 9-5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m3 12 9 5 9-5M3 16l9 5 9-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </span>
+                    <span class="category-copy"><strong>Peripheral Lainnya</strong><small>Lengkapi setup dengan pilihan terbaik.</small></span>
+                    <img src="{{ asset('images/landing/category-headset.webp') }}" alt="Headset untuk kerja dan gaming" width="700" height="500" loading="lazy" decoding="async">
+                    <span class="category-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                 </a>
             </div>
         </div>
     </section>
 
+    <section class="why-section" id="tentang-katalog" aria-labelledby="why-title">
+        <div class="site-container why-grid">
+            <div class="why-image-wrap">
+                <img
+                    src="{{ asset('images/landing/desk-setup.webp') }}"
+                    alt="Desk setup gaming dengan monitor, keyboard, mouse, dan pencahayaan RGB"
+                    width="1200"
+                    height="700"
+                    loading="lazy"
+                    decoding="async"
+                >
+                <div class="why-image-note">
+                    <span class="why-note-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9L12 3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+                    </span>
+                    <span><strong>Pilihan berkualitas</strong><small>Untuk setiap kebutuhan</small></span>
+                </div>
+            </div>
+
+            <div class="why-copy">
+                <span class="eyebrow">Belanja lebih nyaman</span>
+                <h2 id="why-title">Mengapa Memilih <span>KATalog?</span></h2>
+                <p>Solusi lengkap kebutuhan gadget dan periferal dengan kualitas, layanan, dan pengalaman terbaik.</p>
+                <ul class="why-benefits">
+                    <li><span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Koleksi Produk Lengkap</li>
+                    <li><span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Harga Kompetitif</li>
+                    <li><span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Kualitas Terjamin</li>
+                    <li><span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Layanan Pelanggan Responsif</li>
+                </ul>
+                <a class="text-link why-link" href="{{ route('about') }}">
+                    Tentang KATalog
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" aria-labelledby="cta-title">
+        <div class="site-container">
+            <div class="cta-banner">
+                <div class="cta-copy">
+                    <span class="cta-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none"><path d="M5 8h14l1 13H4L5 8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 9V6a3 3 0 0 1 6 0v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                    </span>
+                    <div>
+                        <h2 id="cta-title">Buat Akun Sekarang dan Dapatkan Pengalaman Belanja Terbaik</h2>
+                        <p>Simpan produk favorit, pantau pesanan, dan nikmati berbagai kemudahan lainnya.</p>
+                    </div>
+                </div>
+                <a class="button button-cta" href="{{ route('register') }}">
+                    Daftar Akun Sekarang
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+</div>
 @endsection
